@@ -1,0 +1,278 @@
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f7f9fc; /* Latar belakang lembut */
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* Animasi Global */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Gaya Header */
+header {
+    background: linear-gradient(45deg, #00b4d8, #00c3a3); /* Gradasi biru dan hijau muda */
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: fadeIn 1s ease-out;
+}
+
+header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 25px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+header nav ul li a:hover {
+    background: white;
+    color: #00b4d8;
+    transform: scale(1.1);
+}
+
+/* Gaya Bagian Utama */
+main {
+    padding: 40px 20px;
+    animation: fadeIn 1s ease-out;
+}
+
+main section {
+    margin-bottom: 50px;
+}
+
+main section h2 {
+    font-size: 36px;
+    color: #00b4d8; /* Warna judul */
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+main section p {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Gaya Artikel */
+#article-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.article-item {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.article-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.article-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), transparent);
+    transition: 0.3s;
+    z-index: 1;
+    transform: rotate(-45deg);
+}
+
+.article-item:hover::before {
+    left: -50%;
+}
+
+.article-item h3 {
+    color: #00b4d8;
+    margin-bottom: 15px;
+    font-size: 24px;
+    z-index: 2;
+    position: relative;
+}
+
+.article-item p {
+    color: #555;
+    margin-bottom: 10px;
+    z-index: 2;
+    position: relative;
+}
+
+.article-item a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background: #00c3a3; /* Warna tombol */
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+    z-index: 2;
+    position: relative;
+}
+
+.article-item a:hover {
+    background: #00b4d8; /* Warna hover tombol */
+    transform: scale(1.1);
+}
+
+/* Gaya Footer */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 16px;
+    margin-top: 40px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #article-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Gaya untuk Section About */
+#about {
+    background-color: #f2f9fb; /* Latar belakang lembut */
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+#about h2 {
+    font-size: 36px;
+    color: #00b4d8;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+#about p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Gaya untuk Section Contact */
+#contact {
+    background-color: #f2f9fb;
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 36px;
+    color: #00b4d8;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+#contact p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Gaya untuk Tautan Sosial Media */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    text-align: center;
+}
+
+.social-links img {
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+
+.social-links a:hover img {
+    transform: scale(1.2);
+}
+
+.social-links a:hover span {
+    color: #00b4d8;
+}
